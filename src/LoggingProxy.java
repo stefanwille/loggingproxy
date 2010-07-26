@@ -34,13 +34,13 @@ public class LoggingProxy {
     private void forward(final Socket from, final Socket to, final String side) {
         Thread thread = new Thread(new Runnable() {
             public void run() {
-                forwardSynchronously(from, to, side);
+                doForward(from, to, side);
             }
         });
         thread.start();
     }
 
-    private void forwardSynchronously(Socket from, Socket to, String side) {
+    private void doForward(Socket from, Socket to, String side) {
         try {
             InputStream inputStream = from.getInputStream();
             OutputStream outputStream = to.getOutputStream();
@@ -64,12 +64,12 @@ public class LoggingProxy {
             try {
                 from.close();
             } catch(IOException e) {
-                throw new RuntimeException(e);
+                // Ignore
             }
             try {
                 to.close();
             } catch(IOException e) {
-                throw new RuntimeException(e);
+                // Ignore
             }
         }
 
