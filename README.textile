@@ -1,5 +1,3 @@
-h2. Description
-
 A logging TCP proxy. Forwards clients connections to a server and logs all packets on the console. Useful for SOAP debugging on remote servers.
 
 h2. Setup
