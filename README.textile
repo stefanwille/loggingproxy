@@ -1,12 +1,12 @@
-h1. Logging Proxy
+h2. Description
 
 A logging TCP proxy. Forwards clients connections to a server and logs all packets on the console. Useful for SOAP debugging on remote servers.
 
 h2. Setup
 
-Start with: java -cp . LoggingProxy <localport> <serverhost> <serverport>
+Start with: _java -cp . LoggingProxy localport serverhost serverport_
 
-For example: java -cp . LoggingProxy 8080 stefanwille.com 80
+For example: _java -cp . LoggingProxy 8080 stefanwille.com 80_
 
 h2. Author
 
